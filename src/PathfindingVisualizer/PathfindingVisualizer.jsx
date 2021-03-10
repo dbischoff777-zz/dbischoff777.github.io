@@ -78,9 +78,36 @@ export default class PathfindingVisualizer extends Component {
 
     return (
       <>
-        <button onClick={() => this.visualizeDijkstra()}>
-          Visualize Dijkstra's Algorithm
-        </button>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logistical Pathfinder</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="index.html">Reset Grid</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false" href="#" >
+                    Algorithms
+                  </a>
+                  <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item text-white" href="#">A Star Search</a></li>
+                    <li><a class="dropdown-item text-white" href="#">Breadth-first Search</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <form class="container-fluid justify-content-start">
+                    <button onClick={() => this.visualizeDijkstra()} 
+                      class="btn btn-outline-light me-2" type="button">Start Pathfinding</button>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
