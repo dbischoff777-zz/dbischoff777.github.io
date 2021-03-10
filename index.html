@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Logistical Pathfinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <style>
+    html,
+    body,
+    .grid {
+      height: 100vh;
+      width: 100vw;
+      margin: 0 auto;
+      position: fixed;
+    }
+    /* .grid {
+      background-image: repeating-linear-gradient(#ccc 0 2px, transparent 1px 100%),
+        repeating-linear-gradient(90deg, #ccc 0 2px, transparent 1px 100%);
+      background-size: 25px 25px;
+    } */
+    .headerGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+    .vertical-center {
+      text-align: center;
+    }
+    .span-col-4{
+      grid-column: span 4 / auto;
+    }
+
+    .dropdown-menu > li > a:hover {
+      background-image: none;
+      background-color: red;
+    }
+  </style>
+  <body>
+    <!-- <div class="grid"></div> -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Logistical Pathfinder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Reset Grid</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false" href="#" >
+                Algorithms
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item text-white" href="#">A Star Search</a></li>
+                <li><a class="dropdown-item text-white" href="#">Breadth-first Search</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <form class="container-fluid justify-content-start">
+                <button onClick="visualizeDijkstra()" class="btn btn-outline-light me-2" type="button">Start pathfinding</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div id="root"></root>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js" integrity="sha512-g2PN+aYR0KupTVwea5Ppqw4bxWLLypWdd+h7E0ydT8zF+/Y2Qpk8Y1SnzVw6ZCVJPrgB/91s3VfhVhP7Y4+ucw==" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="src/PathfindingVisualizer/PathfindingVisualizer.jsx"></script>
+  </body>
+</html>
