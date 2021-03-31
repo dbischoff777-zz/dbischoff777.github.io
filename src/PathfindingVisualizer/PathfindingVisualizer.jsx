@@ -9,13 +9,24 @@ const START_NODE_COL = 50;
 const FINISH_NODE_ROW = 1;
 const FINISH_NODE_COL = 50;
 
-export default class PathfindingVisualizer extends Component {
+export default class Visualizer extends Component {
   constructor() {
     super();
     this.state = {
       grid: [],
       mouseIsPressed: false,
+      value: 'Select Algorithm',
     };
+    this.clickFunction = this.clickFunction.bind(this);
+  }
+  
+  changeValue(text) {
+    this.setState({value: text})
+  }
+
+  clickFunction() {
+    if (this.state.value === "Use Dijkstra")
+      this.visualizeDijkstra()
   }
 
   componentDidMount() {
@@ -43,14 +54,14 @@ export default class PathfindingVisualizer extends Component {
       if (i === visitedNodesInOrder.length) {
         setTimeout(() => {
           this.animateShortestPath(nodesInShortestPathOrder);
-        }, 10 * i);
+        }, 9 * i);
         return;
       }
       setTimeout(() => {
         const node = visitedNodesInOrder[i];
         document.getElementById(`node-${node.row}-${node.col}`).className =
           'node node-visited';
-      }, 10 * i);
+      }, 9 * i);
     }
   }
 
@@ -60,7 +71,7 @@ export default class PathfindingVisualizer extends Component {
         const node = nodesInShortestPathOrder[i];
         document.getElementById(`node-${node.row}-${node.col}`).className =
           'node node-shortest-path';
-      }, 50 * i);
+      }, 24 * i);
     }
   }
 
@@ -73,7 +84,8 @@ export default class PathfindingVisualizer extends Component {
     this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
-  render() {
+  render = () => {
+    
     const {grid, mouseIsPressed} = this.state;
 
     return (
@@ -94,20 +106,21 @@ export default class PathfindingVisualizer extends Component {
                     Algorithms
                   </a>
                   <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-white" href="#">A Star Search</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Breadth-first Search</a></li>
+                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Use " + e.target.textContent))}>A Star Search</a></li>
+                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Use " + e.target.textContent))}>Breadth-first Search</a></li>
+                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Use " + e.target.textContent))}>Dijkstra</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
                   <form class="container-fluid justify-content-start">
-                    <button onClick={() => this.visualizeDijkstra()} 
-                      class="btn btn-outline-light me-2" type="button">Start Pathfinding</button>
+                    <button class="btn btn-outline-light me-2" type="button" onClick={this.clickFunction}>{this.state.value}</button>
                   </form>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
+
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (

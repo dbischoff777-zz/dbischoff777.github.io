@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './PathfindingVisualizer/PathfindingVisualizer.css'
-import PathfindingVisualizer from './PathfindingVisualizer/PathfindingVisualizer';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
