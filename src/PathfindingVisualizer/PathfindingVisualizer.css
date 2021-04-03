@@ -6,6 +6,10 @@
   min-width: 1920px;
 }
 
+body {
+  background-color: #343A40;
+}
+
 .dropdown-menu > li > a:hover {
   background-image: none;
   background-color: red;
