@@ -112,7 +112,7 @@ export default class Visualizer extends Component {
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <form class="container-fluid justify-content-start">
+                  <form class="container-fluid justify-content-center">
                     <button class="btn btn-outline-light me-2" type="button" onClick={this.clickFunction}>{this.state.value}</button>
                   </form>
                 </li>
