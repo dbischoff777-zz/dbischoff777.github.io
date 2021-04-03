@@ -1,4 +1,90 @@
 .grid {
   font-size: 0;
   margin: 30px 0px 0px;
+  z-index: -1;
+}
+
+.headerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.vertical-center {
+  text-align: center;
+}
+
+.span-col-4{
+  grid-column: span 4 / auto;
+}
+
+.dropdown-menu > li > a:hover {
+  background-image: none;
+  background-color: red;
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.navbar {
+  user-select: none;
+  z-index: 1;
+}
+
+.box {
+  width: 16%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 8.6%;
+  transform: translate(-50%, -50%);
+  background: #343A40;
+  text-align: center;
+  user-select: none;
+  z-index: 0;
+}
+
+.box input[type="number"] {
+  border: 0;
+  background: none;
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 90%;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type="number"]:focus {
+  width: 100%;
+  border-color: #2ecc71;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  width: 85%;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {  
+  background: #2ecc71;
 }

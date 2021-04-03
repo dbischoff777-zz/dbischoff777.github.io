@@ -5,9 +5,9 @@ import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 import './PathfindingVisualizer.css';
 
 const START_NODE_ROW = 20;
-const START_NODE_COL = 50;
+const START_NODE_COL = 20;
 const FINISH_NODE_ROW = 1;
-const FINISH_NODE_COL = 50;
+const FINISH_NODE_COL = 24;
 
 export default class Visualizer extends Component {
   constructor() {
@@ -15,7 +15,7 @@ export default class Visualizer extends Component {
     this.state = {
       grid: [],
       mouseIsPressed: false,
-      value: 'Select Algorithm',
+      value: 'Select Algorithm first',
     };
     this.clickFunction = this.clickFunction.bind(this);
   }
@@ -25,7 +25,7 @@ export default class Visualizer extends Component {
   }
 
   clickFunction() {
-    if (this.state.value === "Use Dijkstra")
+    if (this.state.value === "Start Dijkstra Pathfinding")
       this.visualizeDijkstra()
   }
 
@@ -99,17 +99,22 @@ export default class Visualizer extends Component {
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="index.html">Reset Grid</a>
+                  <a class="nav-link text-white" href="index.html">Reset</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false" href="#" >
                     Algorithms
                   </a>
                   <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Use " + e.target.textContent))}>A Star Search</a></li>
-                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Use " + e.target.textContent))}>Breadth-first Search</a></li>
-                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Use " + e.target.textContent))}>Dijkstra</a></li>
+                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Start " + e.target.textContent + " Pathfinding"))}>A Star Search</a></li>
+                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Start " + e.target.textContent + " Pathfinding"))}>Breadth-first Search</a></li>
+                    <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Start " + e.target.textContent + " Pathfinding"))}>Dijkstra</a></li>
                   </ul>
+                </li>
+                <li class="nav-item">
+                  <form class="container-fluid justify-content-start">
+                    <button class="btn btn-outline-light me-2" type="button">Open Racklayout</button>
+                  </form>
                 </li>
                 <li class="nav-item">
                   <form class="container-fluid justify-content-start">
@@ -120,6 +125,13 @@ export default class Visualizer extends Component {
             </div>
           </div>
         </nav>
+
+        <form class="box" method="post">
+          <h1>Racklayout</h1>
+          <input type="number" min="10" max="50" name="aisles" placeholder="Enter number of Aisles"></input>
+          <input type="number" min="10" max="74" name="xPositions" placeholder="Enter number of X-Positions"></input>
+          <input type="submit" value="Generate Racking"/>
+        </form>
 
         <div className="grid">
           {grid.map((row, rowIdx) => {
@@ -156,7 +168,7 @@ const getInitialGrid = () => {
   const grid = [];
   for (let row = 0; row < 34; row++) {
     const currentRow = [];
-    for (let col = 0; col < 76; col++) {
+    for (let col = 0; col < 50; col++) {
       currentRow.push(createNode(col, row));
     }
     grid.push(currentRow);
