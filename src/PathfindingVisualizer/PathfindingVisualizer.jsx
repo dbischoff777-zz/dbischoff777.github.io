@@ -93,7 +93,7 @@ export default class Visualizer extends Component {
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">Logistical Pathfinder</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -110,11 +110,6 @@ export default class Visualizer extends Component {
                     <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Start " + e.target.textContent + " Pathfinding"))}>Breadth-first Search</a></li>
                     <li><a class="dropdown-item text-white" href="#" onClick={(e) => (this.changeValue("Start " + e.target.textContent + " Pathfinding"))}>Dijkstra</a></li>
                   </ul>
-                </li>
-                <li class="nav-item">
-                  <form class="container-fluid justify-content-start">
-                    <button class="btn btn-outline-light me-2" type="button">Open Racklayout</button>
-                  </form>
                 </li>
                 <li class="nav-item">
                   <form class="container-fluid justify-content-start">

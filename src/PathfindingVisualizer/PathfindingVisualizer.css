@@ -2,19 +2,8 @@
   font-size: 0;
   margin: 30px 0px 0px;
   z-index: -1;
-}
-
-.headerGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-}
-.vertical-center {
-  text-align: center;
-}
-
-.span-col-4{
-  grid-column: span 4 / auto;
+  max-width: 3840px;
+  min-width: 1920px;
 }
 
 .dropdown-menu > li > a:hover {
@@ -26,6 +15,8 @@ h1 {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
+  font-size: 2.1em;
+  max-width: 300px;
 }
 
 .navbar {
@@ -34,12 +25,12 @@ h1 {
 }
 
 .box {
-  width: 16%;
+  max-width: 300px;
+  min-width: 300px;
   padding: 40px;
   position: absolute;
-  top: 50%;
-  left: 8.6%;
-  transform: translate(-50%, -50%);
+  top: 85px;
+  left: 0%;
   background: #343A40;
   text-align: center;
   user-select: none;
@@ -56,7 +47,8 @@ h1 {
   font-size: 14px;
   border: 2px solid #3498db;
   padding: 14px 10px;
-  width: 90%;
+  max-width: 220px;
+  min-width: 200px;
   outline: none;
   color: white;
   border-radius: 24px;
@@ -64,7 +56,7 @@ h1 {
 }
 
 .box input[type="number"]:focus {
-  width: 100%;
+  width: 220px;
   border-color: #2ecc71;
 }
 
@@ -74,10 +66,11 @@ h1 {
   display: block;
   margin: 20px auto;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.8em;
   border: 2px solid #2ecc71;
   padding: 14px 40px;
-  width: 85%;
+  max-width: 180px;
+  min-width: 180px;
   outline: none;
   color: white;
   border-radius: 24px;
