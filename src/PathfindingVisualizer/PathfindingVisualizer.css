@@ -25,6 +25,8 @@ h1 {
 
 .navbar {
   user-select: none;
+  max-width: 3840px;
+  min-width: 600px;
   z-index: 1;
 }
 
