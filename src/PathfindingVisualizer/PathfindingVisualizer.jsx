@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Node from './Node/Node';
 import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 
+import './socialMedia/sM.css';
 import './PathfindingVisualizer.css';
 
 const START_NODE_ROW = 20;
@@ -116,6 +117,15 @@ export default class Visualizer extends Component {
                     <button class="btn btn-outline-light me-2" type="button" onClick={this.clickFunction}>{this.state.value}</button>
                   </form>
                 </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <div class="sm">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                  <a href="#"><i class="fab fa-twitch"></i></a>
+                  <a href="https://www.xing.com/profile/Dennis_Bischoff13/portfolio"><i class="fab fa-xing"></i></a>
+              </div>
               </ul>
             </div>
           </div>
