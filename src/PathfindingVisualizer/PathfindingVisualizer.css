@@ -28,6 +28,7 @@ h1 {
   max-width: 100%;
   min-width: 600px;
   z-index: 1;
+  border: 2px solid white;
 }
 
 .box {
