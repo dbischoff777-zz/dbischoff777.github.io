@@ -120,11 +120,12 @@ export default class Visualizer extends Component {
               </ul>
               <ul class="navbar-nav ml-auto">
                 <div class="sm">
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
-                  <a href="#"><i class="fab fa-twitch"></i></a>
-                  <a href="https://www.xing.com/profile/Dennis_Bischoff13/portfolio"><i class="fab fa-xing"></i></a>
+                  <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                  <a href="https://www.twitch.tv/" target="_blank"><i class="fab fa-twitch"></i></a>
+                  <a href="https://de.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.xing.com/" target="_blank"><i class="fab fa-xing"></i></a>
               </div>
               </ul>
             </div>
